@@ -1,10 +1,10 @@
 import math
 
 def area(base, height):
-    '''
+    """
     Compute the area of a triangle with the given base and height.
     Raises a ValueError if base or height are negative.
-    '''
+    """
 
     if base < 0 or height < 0:
         raise ValueError('Base and height must be postiive. \
@@ -15,7 +15,7 @@ def area(base, height):
 
 
 def is_right_angle(s1, s2, s3):
-    ''' Use Pythagoras' Theorum to determine if a triangle is right-angled'''
+    """ Use Pythagoras' Theorum to determine if a triangle is right-angled"""
 
     # A triangle is right-angled if a**2 + b**2 == c**c
     # where c is the longest side (** is the power operator, a**2 means 'a squared')

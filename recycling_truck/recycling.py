@@ -1,4 +1,4 @@
-'''
+"""
 From the Java class :)
 
 You are a recycling truck driver. You'd like to collect some statistics on how much each house is recycling.
@@ -9,15 +9,15 @@ Each house put their recycling in crates.
 Figure out the house number with the most recycling, and the number of crates that house recycled.
 Same for house with the least, and the number of crates for that house.
 
-'''
+"""
 from collections import namedtuple
 
 CrateData = namedtuple('CrateData', ['houses', 'crates'])
 
 
 def max_recycling(crates):
-    '''Returns the index with the largest value in the list and the number of crates for that house.
-    Raises ValueError if list is empty.'''
+    """Returns the index with the largest value in the list and the number of crates for that house.
+    Raises ValueError if list is empty."""
 
     if crates is None or len(crates) == 0:
         raise ValueError('A list with at least one element is required')
@@ -37,9 +37,9 @@ def max_recycling(crates):
 
 
 def min_recycling(crates):
-    '''Returns the smallest value in the list
+    """Returns the smallest value in the list
     and a list of house number (list indexes) with that value.
-    Raises ValueError if list is None or empty.'''
+    Raises ValueError if list is None or empty."""
 
     if crates is None or len(crates) == 0:
         raise ValueError('A list with at least one element is required')
@@ -59,7 +59,7 @@ def min_recycling(crates):
 
 
 def total_crates(crates):
-    ''' Return the total of all the values in the crates list'''
+    """ Return the total of all the values in the crates list"""
 
     total = 0
     for crate in crates:
@@ -68,7 +68,7 @@ def total_crates(crates):
 
 
 def get_crate_quantities(houses):
-    ''' Ask user for number of crates for each house'''
+    """ Ask user for number of crates for each house"""
     crates = []
     for house in range(houses):
         crates.append(positive_int_input('Enter crates for house {}'.format(house)))
@@ -76,7 +76,7 @@ def get_crate_quantities(houses):
 
 
 def positive_int_input(question):
-    ''' Valdiate user enters a positive integer '''
+    """ Valdiate user enters a positive integer """
     while True:
         try:
             integer = int(input(question + ' '))

@@ -1,14 +1,14 @@
 import re
 
 def capitalize(word):
-    ''' Convert word to have uppercase first letter, rest in lowercase'''
+    """ Convert word to have uppercase first letter, rest in lowercase"""
     return word[0:1].upper() + word[1:].lower()
     # Slices don't produce index out of bounds errors.
     # So this still works on empty strings, strings of length 1
 
 
 def lowercase(word):
-    '''convert a word to lowercase'''
+    """convert a word to lowercase"""
     return word.lower()
 
 

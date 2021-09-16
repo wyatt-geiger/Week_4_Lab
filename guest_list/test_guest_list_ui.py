@@ -6,8 +6,8 @@ import builtins
 
 class TestGuestListUI(unittest.TestCase):
 
-    ''' Test the user interface of the program. Includes various ways of patching the
-    guest_list.display_menu function'''
+    """ Test the user interface of the program. Includes various ways of patching the
+    guest_list.display_menu function"""
 
     # Use @patch decorators to patch the entire run of this test function.
     # These will create a Mock object, and replace the named function with the Mock.

@@ -22,8 +22,8 @@ class ClassList:
 
 
     def add_student(self, student):
-        ''' Add student if there is space in the class,
-        Raises Error if student is already in the list '''
+        """ Add student if there is space in the class,
+        Raises Error if student is already in the list """
         if len(self.class_list) < self.max_students:
             if student not in self.class_list:
                 self.class_list.append(student)
@@ -32,7 +32,7 @@ class ClassList:
 
 
     def remove_student(self, student):
-        ''' Remove student from class list. Raises Error if student not in list '''
+        """ Remove student from class list. Raises Error if student not in list """
         if student not in self.class_list:
             raise StudentError('Student %s not found in class' % student)
 
@@ -40,13 +40,13 @@ class ClassList:
 
 
     def is_enrolled(self, student):
-        ''' Verifies if the student is enrolled or not '''
+        """ Verifies if the student is enrolled or not """
         return student in self.class_list
 
 
     def index_of_student(self, student):
-        ''' Returns position of student in list, indexed from 1
-        Returns None if student not present '''
+        """ Returns position of student in list, indexed from 1
+        Returns None if student not present """
         if student in self.class_list:
             return self.class_list.index(student) + 1
         return None

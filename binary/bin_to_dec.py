@@ -1,7 +1,7 @@
 def decimal(binary_str):
 
-    ''' Convert binary strings to their decimal equivalents.
-    Throw ValueError if binary_str contains any characters other than 0 and 1'''
+    """ Convert binary strings to their decimal equivalents.
+    Throw ValueError if binary_str contains any characters other than 0 and 1"""
 
     remove_0_and_1 = binary_str.replace('0', '').replace('1', '')
     if len(remove_0_and_1) > 0:

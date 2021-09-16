@@ -10,7 +10,7 @@ def main():
         print('you lose :(')
 
 def play():
-    ''' roll dice. return True if user wins. '''
+    """ roll dice. return True if user wins. """
 
     number_rolled = roll()
     print('You rolled a %d' % number_rolled)

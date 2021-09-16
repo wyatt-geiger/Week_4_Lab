@@ -43,7 +43,7 @@ class TestRecycling(unittest.TestCase):
 
     def test_get_crate_quantities(self):
 
-        '''
+        """
         Create a patch to replace the built in input function with a mock.
         The mock is called mock_input, and we can change the way it behaves, e.g. provide
         our desired return values. So when the code calls input(), instead of
@@ -52,7 +52,7 @@ class TestRecycling(unittest.TestCase):
         list of side_effect values - the first time it is called, it returns the first
         side_effect value (1), second time it will return the second value, (3) etc...
 
-        '''
+        """
 
         example_data = [1, 3, 5, 0, 2, 6]
         with patch('builtins.input', side_effect=example_data) as mock_input:

@@ -6,13 +6,13 @@ guests = []
 
 def display_menu():
 
-    print('''
+    print("""
     1 Display all entries
     2 Add guest
     3 Delete guest
     4 Search for guest
     q Quit
-    ''')
+    """)
 
     print('Please enter your selection: ')
     return(input())

@@ -75,13 +75,12 @@ class PhoneAssignments():
     def phone_info(self, employee):
         # find phone for employee in phones list
 
-        # TODO  should return None if the employee does not have a phone
-        # TODO  the method should raise an exception if the employee does not exist
+        # TODO should return None if the employee does not have a phone
+        # TODO the method should raise an exception if the employee does not exist
 
         for phone in self.phones:
             if phone.employee_id == employee.id:
                 return phone
-
 
         return None
 

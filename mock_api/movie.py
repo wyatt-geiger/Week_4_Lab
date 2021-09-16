@@ -1,13 +1,13 @@
-'''
+"""
 Install requests with
 pip install requests
-'''
+"""
 
 import requests
 import os
 
 
-'''
+"""
 Before running this code, create an OMDB key
 set the OMDB_KEY environment variable on your computer
 You can do it temporarily with the appropriate command,
@@ -22,7 +22,7 @@ set OMDB_KEY=abcd1234
 export OMDB_KEY=abcd1234
 
 Or, you can set permanently. Google will tell you how.
-'''
+"""
 
 movie_base_url = 'http://www.omdbapi.com/'
 
