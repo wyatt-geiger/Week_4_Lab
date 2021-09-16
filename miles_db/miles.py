@@ -4,7 +4,7 @@ db_url = 'miles.db'   # Assumes the table miles have already been created.
 
 """
 Before running this code, ensure that miles.db exists and contains the miles table
-If not, create expected miles table with 
+If not, create expected miles table by running the following SQL on the database, 
 create table miles (vehicle text, total_miles float);
 """
 
@@ -13,15 +13,21 @@ class MileageError(Exception):
 
 
 def add_miles(vehicle, new_miles):
-    '''If the vehicle is in the database, increment the number of miles by new_miles
+    """ If the vehicle is in the database, increment the number of miles by new_miles
     If the vehicle is not in the database, add the vehicle and set the number of miles to new_miles
     If the vehicle is None or new_miles is not a positive number, raise MileageError
-    '''
+    """
 
     if not vehicle:
         raise MileageError('Provide a vehicle name')
     if not isinstance(new_miles, (int, float)) or new_miles < 0:
         raise MileageError('Provide a positive number for new miles')
+
+    vehicle = vehicle.upper().strip() 
+
+    if not vehicle:
+        raise MileageError('Provide a vehicle name')
+    
 
     with sqlite3.connect(db_url) as conn:
         # Attempt to update miles

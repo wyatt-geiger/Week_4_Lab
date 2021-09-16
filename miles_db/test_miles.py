@@ -28,27 +28,48 @@ class TestMileageDB(TestCase):
 
     def test_add_new_vehicle(self):
         miles.add_miles('Blue Car', 100)
-        expected = { 'Blue Car': 100 }
+        expected = { 'BLUE CAR': 100 }
         self.compare_db_to_expected(expected)
 
         miles.add_miles('Green Car', 50)
-        expected['Green Car'] = 50
+        expected['GREEN CAR'] = 50
         self.compare_db_to_expected(expected)
 
 
     def test_increase_miles_for_vehicle(self):
         miles.add_miles('Red Car', 100)
-        expected = { 'Red Car': 100 }
+        expected = { 'RED CAR': 100 }
         self.compare_db_to_expected(expected)
 
         miles.add_miles('Red Car', 50)
-        expected['Red Car'] = 100 + 50
+        expected['RED CAR'] = 100 + 50
         self.compare_db_to_expected(expected)
+
+
+    def test_increase_miles_ignores_case(self):
+        miles.add_miles('Orange Car', 10)
+        miles.add_miles('ORANGE CAR', 10)
+        miles.add_miles('oRanGe CaR', 10)
+        miles.add_miles('orange car', 10)
+
+        expected = { 'ORANGE CAR': 40 }
+        self.compare_db_to_expected(expected)
+
 
 
     def test_add_new_vehicle_no_vehicle(self):
         with self.assertRaises(MileageError):
             miles.add_miles(None, 100)
+
+    
+    def test_add_new_vehicle_empty_string(self):
+        with self.assertRaises(MileageError):
+            miles.add_miles('', 100)
+
+
+    def test_add_new_vehicle_blank_string(self):
+        with self.assertRaises(MileageError):
+            miles.add_miles('   ', 100)
 
 
     def test_add_new_vehicle_invalid_new_miles(self):
